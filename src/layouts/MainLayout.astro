@@ -1,0 +1,54 @@
+---
+import "@fontsource-variable/inter";
+import "@fontsource/space-mono/400.css";
+import "@fontsource/space-mono/700.css";
+import Footer from "~/components/footer.astro";
+import Header from "~/components/header.astro";
+import "~/styles/index.css";
+
+const { generator, site } = Astro;
+const image = new URL("social.jpg", site);
+const title = "Lightstand";
+const description = "Building software for the glory of God.";
+const dynamicHeader = Astro.props.dynamicHeader;
+const { frontmatter } = Astro.props;
+console.log(frontmatter);
+---
+
+<!doctype html>
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="generator" content={generator} />
+
+    <title>{title}</title>
+
+    <meta name="description" content={description} />
+
+    <!-- social media -->
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- initialize theme -->
+    <script is:inline>
+      const themeSaved = localStorage.getItem("theme");
+      document.documentElement.dataset.theme = themeSaved || "dark";
+    </script>
+  </head>
+  <body
+    class={`h-full overflow-x-hidden 
+    bg-default text-default text-base 
+    selection:bg-secondary selection:text-white 
+    ${!dynamicHeader ? "pt-24" : ""}`}
+  >
+    <Header dynamic={dynamicHeader} />
+    <slot />
+    <Footer />
+  </body>
+</html>

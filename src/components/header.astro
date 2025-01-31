@@ -4,22 +4,24 @@ import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 import Logo from "~/components/brand/Logo.astro";
 
-
 const navItems: Array<NavItem> = [
-  { title: "The movement", url: "#intro" },
-  { title: "Projects", url: "#projects" },
+  { title: "The movement", url: "/#intro" },
+  { title: "Projects", url: "/#projects" },
   // { title: "Compatibility", url: "#compatibility" },
   // { title: "Showcase", url: "#showcase" },
 ];
+
+const { dynamic } = Astro.props;
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  data-dynamic={`${dynamic}`}
+  class={`absolute ${dynamic ? "bottom-0" : "top-0"} z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white`}
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
     <Logo />
-    <h1 class="hidden sm:block text-sm">Lightstand</h1>
+    <h1 class="hidden text-sm sm:block">Lightstand</h1>
   </a>
   <div>
     <div class="flex items-center gap-6">
@@ -88,6 +90,7 @@ const navItems: Array<NavItem> = [
   const menuModalId = "menu-modal";
 
   const header = document.querySelector("#page-header") as HTMLElement;
+  const dynamic = header.dataset.dynamic;
   const page = document.documentElement;
   const menu = document.querySelector(`#${menuModalId} ul`);
   const openNavButton = document.querySelector("#open-nav-button");
@@ -109,10 +112,14 @@ const navItems: Array<NavItem> = [
   openNavButton.addEventListener("click", openMenu);
   closeNavButton.addEventListener("click", closeMenu);
 
-  document.addEventListener("scroll", () => {
-    const d = page.clientHeight - page.scrollTop - header.offsetHeight;
-    header.classList.toggle("fixed-header", d < 0);
-  });
+  if (dynamic) {
+    document.addEventListener("scroll", () => {
+      const d = page.clientHeight - page.scrollTop - header.offsetHeight;
+      header.classList.toggle("fixed-header", d < 0);
+    });
+  } else {
+    header.classList.add("fixed-header");
+  }
 
   menu.addEventListener("click", (event) => {
     if ((event.target as HTMLElement).tagName === "A") {
@@ -136,5 +143,9 @@ const navItems: Array<NavItem> = [
   }
   .modal.is-open {
     @apply block;
+  }
+
+  header {
+    font-family: "Space Mono", monospace;
   }
 </style>
