@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import BentoGrid from '../components/BentoGrid';
+import Features from '../components/Features';
+import Pricing from '../components/Pricing';
+import Footer from '../components/Footer';
+---
+
+<Layout>
+	<Navbar client:load />
+	<main>
+		<Hero client:load />
+		<BentoGrid client:visible />
+		<Features client:visible />
+		<Pricing client:visible />
+	</main>
+	<Footer />
+</Layout>

@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #000000;
+  
+  --color-zinc-900: #18181b;
+  --color-zinc-800: #27272a;
+  --color-zinc-400: #a1a1aa;
+
+  --font-sans: "Inter", sans-serif;
+
+  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  --tracking-tight: -0.02em;
+}
+
+/* Custom Utilities if needed */
+@utility text-balance {
+  text-wrap: balance;
+}
