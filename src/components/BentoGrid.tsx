@@ -34,7 +34,7 @@ export default function BentoGrid() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold tracking-tight mb-6"
           >
-            O problema dos sites antigos.
+            O problema dos sites amadores.
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -43,8 +43,8 @@ export default function BentoGrid() {
             transition={{ delay: 0.2 }}
             className="text-zinc-400 text-lg max-w-2xl mx-auto"
           >
-            A maioria dos sites locais são lentos, inseguros e feios. 
-            Nós mudamos isso.
+            Sites lentos e feios perdem clientes todos os dias. 
+            Nós resolvemos isso definitivamente.
           </motion.p>
         </div>
 
@@ -91,9 +91,9 @@ export default function BentoGrid() {
             <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mb-6">
               <Shield className="w-6 h-6 text-green-400" />
             </div>
-            <h3 className="text-2xl font-bold mb-4">Blindado</h3>
+            <h3 className="text-2xl font-bold mb-4">Sem Dor de Cabeça</h3>
             <p className="text-zinc-400 leading-relaxed">
-              Sem banco de dados para ser hackeado. Apenas HTML puro e seguro.
+              Nós cuidamos de tudo: domínio, hospedagem e atualizações. Você foca no seu negócio.
             </p>
           </Card>
 

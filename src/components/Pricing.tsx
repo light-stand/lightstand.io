@@ -10,28 +10,19 @@ function cn(...inputs: ClassValue[]) {
 
 const plans = [
   {
-    name: "Presença",
-    price: "R$ 97",
-    setup: "R$ 299 setup",
-    description: "Para quem está começando.",
-    features: ["Site One-Page", "Hospedagem Inclusa", "Dominio Grátis (1 ano)", "Suporte via Email"],
-    highlight: false
-  },
-  {
-    name: "Crescimento",
-    price: "R$ 197",
-    setup: "R$ 799 setup",
-    description: "Para escalar seu negócio.",
-    features: ["Site Multi-Page (até 5)", "Blog Integrado", "SEO Avançado", "Suporte Prioritário", "Analytics Dashboard"],
+    name: "Lightstand Pro",
+    price: "R$ 50",
+    setup: "R$ 300 taxa única de setup",
+    description: "Tudo que você precisa para ter uma presença digital profissional.",
+    features: [
+      "Site Profissional Completo", 
+      "Hospedagem Premium Inclusa", 
+      "Manutenção Mensal", 
+      "Otimizado para Google (SEO)",
+      "Carregamento Instantâneo",
+      "Botão WhatsApp Integrado"
+    ],
     highlight: true
-  },
-  {
-    name: "Dominância",
-    price: "Sob Consulta",
-    setup: "R$ 1.999 setup",
-    description: "Soluções customizadas.",
-    features: ["Páginas Ilimitadas", "Integrações API", "Design Exclusivo", "Gerente de Conta", "SLA Garantido"],
-    highlight: false
   }
 ];
 
@@ -53,7 +44,7 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex justify-center">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
@@ -62,7 +53,7 @@ export default function Pricing() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className={cn(
-                "relative p-8 rounded-3xl border backdrop-blur-sm flex flex-col",
+                "relative p-8 rounded-3xl border backdrop-blur-sm flex flex-col w-full max-w-lg",
                 plan.highlight 
                   ? "bg-white/10 border-white/20 ring-1 ring-white/20" 
                   : "bg-white/5 border-white/10"

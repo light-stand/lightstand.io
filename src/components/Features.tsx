@@ -5,18 +5,18 @@ import { Code2, Cpu, TrendingUp } from 'lucide-react';
 const features = [
   {
     icon: <Code2 className="w-8 h-8 text-purple-400" />,
-    title: "Vibecoding Technology",
-    description: "Desenvolvimento assistido por IA combinado com engenheiros experts. Código limpo, moderno e escalável."
+    title: "Design de Alto Nível",
+    description: "Seu negócio com uma aparência profissional e moderna. Passe a credibilidade de uma grande franquia."
   },
   {
     icon: <Cpu className="w-8 h-8 text-blue-400" />,
-    title: "Astro Core",
-    description: "Arquitetura de ilhas para zero JavaScript desnecessário. Seu site é entregue como HTML estático ultra-leve."
+    title: "Carregamento Instantâneo",
+    description: "Seu cliente não espera. Nossos sites carregam em milissegundos, garantindo que você não perca nenhuma venda."
   },
   {
     icon: <TrendingUp className="w-8 h-8 text-green-400" />,
-    title: "Lead Ready",
-    description: "Estrutura otimizada para conversão. CTAs estratégicos e design focado em transformar visitantes em clientes."
+    title: "Pronto para o Google",
+    description: "Estrutura otimizada para você ser encontrado no Google Maps e na busca orgânica da sua região."
   }
 ];
 

@@ -5,7 +5,9 @@ export default function Footer() {
     <footer className="py-12 border-t border-white/10 bg-black">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-2">
-          <span className="text-lg font-bold text-white tracking-tight">lightstand</span>
+          <span className="text-lg tracking-tighter text-white">
+            <span className="font-medium">light</span><span className="font-bold">stand</span>
+          </span>
           <span className="text-zinc-500 text-sm">© 2025</span>
         </div>
         
