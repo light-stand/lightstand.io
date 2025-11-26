@@ -31,9 +31,10 @@ export default function Navbar() {
           </a>
           
           <div className="hidden md:flex items-center gap-8">
+            <a href="#benefits" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Vantagens</a>
             <a href="#features" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Soluções</a>
             <a href="#pricing" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Preços</a>
-            <a href="#contact" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Contato</a>
+            {/* <a href="#contact" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Contato</a> */}
           </div>
 
           <button 
@@ -55,6 +56,13 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-black pt-24 px-6 md:hidden"
           >
             <div className="flex flex-col gap-6 text-2xl font-medium">
+              <a 
+                href="#benefits" 
+                onClick={() => setIsOpen(false)}
+                className="text-zinc-400 hover:text-white transition-colors"
+              >
+                Vantagens
+              </a>
               <a 
                 href="#features" 
                 onClick={() => setIsOpen(false)}

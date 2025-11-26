@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import React from "react";
+import { motion } from "framer-motion";
+import { Check } from "lucide-react";
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -10,20 +10,20 @@ function cn(...inputs: ClassValue[]) {
 
 const plans = [
   {
-    name: "Lightstand Pro",
+    name: "Site Completo",
     price: "R$ 50",
     setup: "R$ 300 taxa única de setup",
     description: "Tudo que você precisa para ter uma presença digital profissional.",
     features: [
-      "Site Profissional Completo", 
-      "Hospedagem Premium Inclusa", 
-      "Manutenção Mensal", 
+      "Site Profissional Completo",
+      "Hospedagem Premium Inclusa",
+      "Manutenção Mensal",
       "Otimizado para Google (SEO)",
       "Carregamento Instantâneo",
-      "Botão WhatsApp Integrado"
+      "Botão WhatsApp Integrado",
     ],
-    highlight: true
-  }
+    highlight: true,
+  },
 ];
 
 export default function Pricing() {
@@ -39,9 +39,7 @@ export default function Pricing() {
           >
             Investimento simples.
           </motion.h2>
-          <p className="text-zinc-400 text-lg">
-            Sem taxas escondidas. Cancele quando quiser.
-          </p>
+          <p className="text-zinc-400 text-lg">Sem taxas escondidas. Cancele quando quiser.</p>
         </div>
 
         <div className="flex justify-center">
@@ -54,8 +52,8 @@ export default function Pricing() {
               transition={{ delay: index * 0.1 }}
               className={cn(
                 "relative p-8 rounded-3xl border backdrop-blur-sm flex flex-col w-full max-w-lg",
-                plan.highlight 
-                  ? "bg-white/10 border-white/20 ring-1 ring-white/20" 
+                plan.highlight
+                  ? "bg-white/10 border-white/20 ring-1 ring-white/20"
                   : "bg-white/5 border-white/10"
               )}
             >
@@ -64,7 +62,7 @@ export default function Pricing() {
                   Mais Popular
                 </div>
               )}
-              
+
               <div className="mb-8">
                 <h3 className="text-xl font-medium text-white mb-2">{plan.name}</h3>
                 <div className="flex items-baseline gap-1 mb-1">
@@ -74,9 +72,7 @@ export default function Pricing() {
                 <p className="text-sm text-zinc-500">{plan.setup}</p>
               </div>
 
-              <p className="text-zinc-400 mb-8 pb-8 border-b border-white/10">
-                {plan.description}
-              </p>
+              <p className="text-zinc-400 mb-8 pb-8 border-b border-white/10">{plan.description}</p>
 
               <ul className="space-y-4 mb-8 flex-1">
                 {plan.features.map((feature, i) => (
@@ -87,14 +83,19 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <button className={cn(
-                "w-full py-4 rounded-xl font-medium transition-all",
-                plan.highlight
-                  ? "bg-white text-black hover:scale-105"
-                  : "bg-white/10 text-white hover:bg-white/20"
-              )}>
+              <a
+                href={`https://wa.me/5541988767247?text=Olá, tenho interesse`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "w-full py-4 rounded-xl font-medium transition-all block text-center",
+                  plan.highlight
+                    ? "bg-white text-black hover:scale-105"
+                    : "bg-white/10 text-white hover:bg-white/20"
+                )}
+              >
                 Começar Agora
-              </button>
+              </a>
             </motion.div>
           ))}
         </div>
